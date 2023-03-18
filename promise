@@ -11,3 +11,23 @@
 https://jestjs.io/docs/27.x/configuration#testmatch-arraystring
 ![](https://u.netology.ru/backend/uploads/markdown_images/image/125229/image.png)
 Чаще обращайтесь к документации на библиотеки, что используете. 
+
+
+
+
+Итератор достаточно частая штука в логике языка. И это можно использовать.
+
+Например Set может вернуть итератор, достаточно немного изучить документацию. 
+![](https://u.netology.ru/backend/uploads/markdown_images/image/125236/image.png)
+
+А если это так, значит можно без зазрения совести использовать его.
+![](https://u.netology.ru/backend/uploads/markdown_images/image/125237/image.png)
+
+Причём и с массивами тоже.
+![](https://u.netology.ru/backend/uploads/markdown_images/image/125238/image.png)
+
+А с генераторами ещё интереснее:
+![](https://u.netology.ru/backend/uploads/markdown_images/image/125239/image.png)
+
+И это возможно потому что:
+![](https://u.netology.ru/backend/uploads/markdown_images/image/125240/image.png)
