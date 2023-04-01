@@ -31,3 +31,22 @@ https://jestjs.io/docs/27.x/configuration#testmatch-arraystring
 
 И это возможно потому что:
 ![](https://u.netology.ru/backend/uploads/markdown_images/image/125240/image.png)
+
+
+Ещё первую задачу можно решить так:
+
+```javascript
+function getOrderedProps(obj, filter) {
+  const filterAndSortObjProperties = Object.keys(obj)
+    .filter(key => !filter.includes(key))
+    .sort()
+  const concatProps = filter.concat(filterAndSortObjProperties);
+  
+  return concatProps.map(key => ({
+    key, value: obj[key] 
+  }))
+  
+}
+```
+
+
