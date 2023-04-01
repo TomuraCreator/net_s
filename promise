@@ -51,3 +51,8 @@ function getOrderedProps(obj, filter) {
 ```
 
 
+1. Сохранить список ключех исходного объекта (Object.keys)
+2. Отфильтровать ключи, которые не нужно сортировать на дубликаты с массивом из параметров (Array.prototype.filter) 
+3. Отсортировать ключи, которые нужно сортировать: (Array.prototype.sort)
+4. Объединить массив (sort, alphaberSort), пройтись по нему (Array.prototype.map) и дать ответ
+
