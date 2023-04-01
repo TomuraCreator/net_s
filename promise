@@ -40,9 +40,10 @@ function getOrderedProps(obj, filter) {
   const filterAndSortObjProperties = Object.keys(obj)
     .filter(key => !filter.includes(key))
     .sort()
-  const concatProps = filter.concat(filterAndSortObjProperties);
   
-  return concatProps.map(key => ({
+  return filter
+    .concat(filterAndSortObjProperties)
+    .map(key => ({
     key, value: obj[key] 
   }))
   
