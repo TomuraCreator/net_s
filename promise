@@ -56,3 +56,7 @@ function getOrderedProps(obj, filter) {
 3. Отсортировать ключи, которые нужно сортировать: (Array.prototype.sort)
 4. Объединить массив (sort, alphaberSort), пройтись по нему (Array.prototype.map) и дать ответ
 
+
+
+Я написал небольшой пример, как это можно сделать:
+https://replit.com/@TomuraCreator/dragndrop
