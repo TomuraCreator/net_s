@@ -50,6 +50,13 @@ function getOrderedProps(obj, filter) {
 }
 ```
 
+А вторую так:
+```javascript
+const getAvailableAttackOptions = ({special}) => special
+	.map(el => ({...el, description: el.description || "Описание недоступно"}))
+```
+
+
 Почему бы просто не написать так:
 ```javascript
 function getHealth({health}) {
