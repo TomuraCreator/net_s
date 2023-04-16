@@ -50,6 +50,33 @@ function getOrderedProps(obj, filter) {
 }
 ```
 
+Почему бы просто не написать так:
+```javascript
+function getHealth({health}) {
+  if(health <= 15) {
+    return 'critical'
+  }
+  if(health <= 50) {
+    return 'wounded'
+  }
+  return 'healthy'
+}
+```
+
+Коллбэк сортировки можно просто написать так, без тернарки:
+```javascript
+function sortPlayers(players) {
+  return [...players].sort((a, b) => b.health - a.health);
+}
+```
+
+А если использовать ещё и стрелочную функцию, то это становится до смешного просто. 
+```javascript
+const sortPlayers = players => [...players].sort((a, b) => b.health - a.health);
+}
+```
+Не забывайте делать, хотябы не глубокую копию исходных данных, чтобы не мутировать их. Мы же хотим получить сортировку какого-то массива, а не отсортировать его с концами) 
+
 
 1. Сохранить список ключех исходного объекта (Object.keys)
 2. Отфильтровать ключи, которые не нужно сортировать на дубликаты с массивом из параметров (Array.prototype.filter) 
