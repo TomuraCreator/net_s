@@ -12,6 +12,16 @@ https://jestjs.io/docs/27.x/configuration#testmatch-arraystring
 ![](https://u.netology.ru/backend/uploads/markdown_images/image/125229/image.png)
 Чаще обращайтесь к документации на библиотеки, что используете. 
 
+```javascript
+export default class GameSavingLoader {
+    load() {  
+        return read()
+		.then(res => json(res))
+		.then(result => JSON.parse(result))
+		.then({id, created, userInfo} => new GameSaving(id, created, userInfo))
+    }
+}
+```
 
 
 
