@@ -164,3 +164,18 @@ export default class Validator {
 	}
 }
 ```
+
+```
+[Symbol.iterator]() {
+    const teamArray = Array.from(this.members);
+    let current = 0;
+    return {
+      next() {
+        return {
+          value: teamArray[current++],
+          done: teamArray.length < current,
+        };
+      },
+    };
+  }
+```
