@@ -74,6 +74,8 @@ h1 и P друг для друга соседние, но дочерние к э
 
 
 Добрый день!
+
+Всё выполнено абсолютно верно, дополнить нечего)
 ![](https://u.netology.ru/backend/uploads/markdown_images/image/115022/image.png)
 Зачёт
 
