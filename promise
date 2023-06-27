@@ -23,6 +23,49 @@ export default class GameSavingLoader {
 }
 ```
 
+Как и вторую, не обязательно оборачивать каждое выражение в try/catch
+```javascript
+  static async load() {
+	try {
+	    const data = await read();
+		const dataParsed = await json(data);
+		const { id, created, userInfo } = JSON.parse(dataParsed);
+		return new GameSaving(id, created, userInfo);
+	} catch (e) {
+		return e
+	}
+  }
+```
+
+
+Мок можно написать так:
+```javascript
+import GameSavingLoader from '../gamesavingloader.js';
+import read from '../reader.js';
+
+jest.mock('../reader.js');
+
+test('test error', async () => {
+  read.mockImplementation(() => new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('ooops'));
+    }, 1000);
+  }));
+
+  const error = await GameSavingLoader.load();
+  expect(error).toBeInstanceOf(Error);
+  expect(error).toHaveProperty('message', 'ooops');
+});
+
+test('test', async () => {
+  const result = JSON.stringify({id: 9, created: 1624871111111, userInfo: {name: 'test', level: 1, points: 200}});
+  read.mockImplementation(() => Promise.resolve(result));
+
+  const obj = await GameSavingLoader.load();
+  expect(obj.id).toBe(9);
+});
+```
+
 
 
 Итератор достаточно частая штука в логике языка. И это можно использовать.
