@@ -157,6 +157,7 @@ const sortPlayers = players => [...players].sort((a, b) => b.health - a.health);
 Я написал небольшой пример, как это можно сделать:
 https://replit.com/@TomuraCreator/dragndrop
 https://codepen.io/tomuracreator/pen/wvQMexK?editors=0010
+https://codepen.io/tomuracreator/pen/NWEGzvm
 
 *Visa:*
 Регулярное выражение: ^4[0-9]{12}(?:[0-9]{3})?$
